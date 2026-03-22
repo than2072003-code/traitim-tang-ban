@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gửi Bạn</title>
+    <style>
+        body { background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .heart {
+            background-color: red;
+            display: inline-block;
+            height: 100px;
+            position: relative;
+            transform: rotate(-45deg);
+            width: 100px;
+            animation: beat .8s infinite;
+        }
+        .heart:before, .heart:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 100px;
+            position: absolute;
+            width: 100px;
+        }
+        .heart:before { top: -50px; left: 0; }
+        .heart:after { left: 50px; top: 0; }
+        @keyframes beat {
+            0% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.2) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+</body>
+</html>
