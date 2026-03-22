@@ -3,7 +3,16 @@
 <head>
     <title>Gửi Bạn</title>
     <style>
-        body { background-color: black; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        body { 
+            background-color: black; 
+            display: flex; 
+            flex-direction: column; /* Sắp xếp trái tim và chữ theo chiều dọc */
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            overflow: hidden;
+        }
         .heart {
             background-color: red;
             display: inline-block;
@@ -23,14 +32,34 @@
         }
         .heart:before { top: -50px; left: 0; }
         .heart:after { left: 50px; top: 0; }
+        
+        /* Cài đặt cho dòng chữ */
+        .text {
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 80px; /* Tạo khoảng cách dưới trái tim */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: textBeat .8s infinite; /* Chữ cũng đập theo tim */
+        }
+
         @keyframes beat {
             0% { transform: scale(1) rotate(-45deg); }
             50% { transform: scale(1.2) rotate(-45deg); }
             100% { transform: scale(1) rotate(-45deg); }
         }
+
+        @keyframes textBeat {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
     </style>
 </head>
 <body>
     <div class="heart"></div>
+    <div class="text">I Love You</div>
 </body>
 </html>
